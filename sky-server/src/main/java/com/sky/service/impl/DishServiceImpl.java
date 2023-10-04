@@ -55,7 +55,6 @@ public class DishServiceImpl implements DishService {
             flavors.stream().forEach( dishFlavor -> {dishFlavor.setDishId(dishId);});
             dishFlavorMapper.insertBatch(flavors);
         }
-
     }
 
     /**
@@ -142,5 +141,20 @@ public class DishServiceImpl implements DishService {
             flavors.stream().forEach( dishFlavor -> {dishFlavor.setDishId(dishDTO.getId());});
             dishFlavorMapper.insertBatch(flavors);
         }
+    }
+
+    /**
+     * 根据分类id来查询菜品
+     * @return
+     * @param categoryId
+     */
+    @Override
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder()
+                .categoryId(categoryId)
+                //状态是起售才能被使用 1.启用
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.selectCategoryId(dish);
     }
 }
