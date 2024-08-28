@@ -4,10 +4,10 @@ sky:
     host: localhost
     port: 3306
     database: sky_take_out
-    username: root
-    password: 123456
+    username: 
+    password: 
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5t6XC29ao3ptx2xoSsT1
-    access-key-secret: P629CZCd5wPl5jrG8Wcsfe6Exi0Srs
-    bucket-name: sky-itcast-gyf
+    access-key-id:
+    access-key-secret: 
+    bucket-name: 
